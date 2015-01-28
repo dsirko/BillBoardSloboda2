@@ -16,9 +16,9 @@
 #
 default: &default
   adapter: postgresql
+  user: dsirko
+  password: '023'
   encoding: unicode
-  username: postgresuser
-  password: abyfkabyfk
   host: localhost
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -32,7 +32,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: BillBoardSloboda2
+  #username: shop
 
   # The password associated with the postgres role (username).
   #password:
@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: BillBoardSloboda2_production
-  username: BillBoardSloboda2
-  password: <%= ENV['BILLBOARDSLOBODA2_DATABASE_PASSWORD'] %>
+  #username: shop
+  #password: <%= ENV['SHOP_DATABASE_PASSWORD'] %>
