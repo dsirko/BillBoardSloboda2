@@ -1,0 +1,4 @@
+h1 Tag
+b= @tag.name
+p= @tag.advertisements.map(&:name).join(', ')
+= link_to 'All tags', tags_path

@@ -1,0 +1,12 @@
+= simple_form_for @tag do |f|
+  div.cyte-form
+    = f.input :name
+  div.cyte-form
+    = f.association :advertisements, collecion: Advertisement.all, prompt: "Choose a Tag"
+  div.cyte-form
+  = f.submit
+  
+  
+p 
+  = link_to 'All tags', tags_path 
+  

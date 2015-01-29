@@ -1,0 +1,17 @@
+h1 All tag 
+table.table
+  thead
+    tr
+      th Tags name
+      th Advertisements
+      th Actions
+  tbody
+    - @tags.each do |tag|
+      tr
+        td= link_to tag.name, tag_path(tag)
+        td= tag.advertisements.map(&:name).join(', ')
+        td
+          = link_to 'Edit', edit_tag_path(tag)
+          | |
+          = link_to '[x]', tag_path(tag), method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'New', new_tag_path, class: 'btn'
