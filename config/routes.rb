@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :feedbacks
 
+  resources :tags
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
