@@ -1,5 +1,5 @@
 h1 Feedback
 b= @feedback.text
 p= @feedback.rating
-p= @feedback.user.mail if @feedback.user
-= link_ti 'All feedbacks', feedbacks_path
+p= @feedback.user.email
+= link_to 'All feedbacks', feedbacks_path
