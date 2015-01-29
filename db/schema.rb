@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20150129130222) do
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "owner_id"
   end
 
   create_table "feedbacks", force: :cascade do |t|
