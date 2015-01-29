@@ -14,6 +14,42 @@
 </p>
  
 
+<h2>Feedbacks</h2>
+
+<% @advertisement.feedbacks.each do |feedback| %>
+  <p>
+    <strong>User:</ctrong>
+    <%= feedback.user.email if feedback.user %> 
+
+  </p>
+  <p>
+    <strong>Feedback:</ctrong>
+    <%= feedback.text %>
+  </p>
+  <p>
+    <%= link_to 'Delete Feedback', [feedback.advertisement, feedback],
+                 method:  :delete,
+                 data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+
+
+  <h2>Add a feedback:</h2>
+  <%= form_for([@advertisement, @advertisement.feedbacks.build]) do |f| %>
+    <p>
+      <%= f.label :text %><br>
+      <%= f.text_area :text %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+
+
+
+
+
+
 <br/>
 <%= link_to 'Back', advertisements_path %>
 <%= link_to 'Edit', edit_advertisement_path(@advertisement) %>
