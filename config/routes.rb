@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :advertisements
-  resources :feedbacks
+  resources :advertisements do
+    resources :feedbacks
+  end
 
   resources :tags
 
