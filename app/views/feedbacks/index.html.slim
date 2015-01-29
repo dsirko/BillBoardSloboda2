@@ -1,0 +1,21 @@
+h1 All feedbacks 
+table.table
+  thead
+    tr
+      th Feedbacks texts
+      th Rating
+      th Owner
+      th Advertisement
+      th Actions
+  tbody
+    - @feedbacks.each do |feedback|
+      tr
+        td= feedback.text
+        td= feedback.rating
+        td= feedback.user.email
+        td= feedback.advertisement if feedback.advertisement
+        td
+          = link_to 'Edit', edit_feedback_path(feedback)
+          | |
+          = link_to '[x]', feedback_path(feedback), method: :delete, data: { confirm: 'sure?' }
+= link_to 'New', new_feedback_path, class: 'btn'
