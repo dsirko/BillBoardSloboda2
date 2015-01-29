@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :advertisements
   resources :feedbacks
 
+  resources :tags
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
