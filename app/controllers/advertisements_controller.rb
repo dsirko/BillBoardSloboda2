@@ -18,7 +18,7 @@ class AdvertisementsController < ApplicationController
   end
 
   def create
-    @advertisement = Advertisement.new(advertisement_params)
+    @advertisement = current_user.advertisements.new(advertisement_params)
 
     if @advertisement.save
       redirect_to @advertisement
