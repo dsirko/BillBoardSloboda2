@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2495353279">
+  <component name="DataSourceManagerImpl" format="xml" hash="2620577442">
     <data-source source="LOCAL" name="Rails BillBoardSloboda2: development" uuid="c93df313-c353-49b3-8756-09758aad2d2f">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
