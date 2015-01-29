@@ -10,7 +10,7 @@ table.table
   tbody
     - @feedbacks.each do |feedback|
       tr
-        td= feedback.text
+        td= link_to feedback.text, feedback_path(feedback)
         td= feedback.rating
         td= feedback.user.email
         td= feedback.advertisement if feedback.advertisement
