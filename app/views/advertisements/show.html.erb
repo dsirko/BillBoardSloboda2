@@ -1,0 +1,19 @@
+<p>
+  <strong>Title:</strong>
+  <%= @advertisement.name %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @advertisement.text %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @advertisement.owner.email %>
+</p>
+ 
+
+<br/>
+<%= link_to 'Back', advertisements_path %>
+<%= link_to 'Edit', edit_advertisement_path(@advertisement) %>
