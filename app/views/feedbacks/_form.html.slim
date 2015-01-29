@@ -1,0 +1,14 @@
+= simple_form_for @feedback do |f|
+  div.cyte-form
+    = f.input :text
+  div.cyte-form
+    = f.input :rating
+  div.cyte-form
+    = f.input :advertisement_id
+  div.cyte-form
+  = f.submit
+  
+  
+p 
+  = link_to 'All feedbacks', feedbacks_path 
+  
