@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :feedbacks
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
