@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   end
 
   resources :tags
+  resources :adv_categories
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
