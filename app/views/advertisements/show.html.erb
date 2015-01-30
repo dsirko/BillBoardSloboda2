@@ -28,12 +28,12 @@
 
 <% @advertisement.feedbacks.each do |feedback| %>
   <p>
-    <strong>User:</ctrong>
+    <strong>User:</strong>
     <%= feedback.user.email if feedback.user %> 
 
   </p>
   <p>
-    <strong>Feedback:</ctrong>
+    <strong>Feedback:</strong>
     <%= feedback.text %>
   </p>
   <p>
@@ -56,9 +56,6 @@
       <%= f.submit %>
     </p>
   <% end %>
-
-
-
 
 
 
