@@ -1,9 +1,4 @@
 <p>
-  <strong>Title:</strong>
-  <h1><%= @advertisement.name %></h1>
-</p>
-
-<p>
   <strong>Text:</strong>
   <%= @advertisement.text %>
 </p>
@@ -29,6 +24,7 @@
 <% @advertisement.feedbacks.each do |feedback| %>
   <p>
     <strong>User:</strong>
+
     <%= feedback.user.email if feedback.user %> 
 
   </p>

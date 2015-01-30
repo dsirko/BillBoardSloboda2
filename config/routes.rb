@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # get 'home/info'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :tags
   resources :adv_categories
+    #resources :parent_category_id
 
 
   # Example of regular route:
