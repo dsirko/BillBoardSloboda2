@@ -1,3 +1,8 @@
+
+
+
+
+
 // SASS variable overrides must be declared before loading up Active Admin's styles.
 //
 // To view the variables that Active Admin provides, take a look at
@@ -15,3 +20,23 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+body {
+background-color: #66CDAA;
+margin: 100px 40px 10px 70px;
+}
+h1 {
+font-family: trebuchet, verdana, sans-serif;
+padding-left: 40px;
+}
+
+h2 {
+font-size: 150%;
+font-family: trebuchet, verdana, sans-serif;
+padding-left: 20px;
+}
+
+p {
+font-size: 120%;
+font-family: arial, sans-serif;
+}
