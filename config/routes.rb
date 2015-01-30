@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'home/info'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
@@ -6,7 +8,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  # root 'welcome#index'
+  root 'home#info'
+
+  get 'info', :to => 'home#info'
 
   devise_for :users
 
