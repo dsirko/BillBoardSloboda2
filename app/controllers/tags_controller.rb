@@ -19,7 +19,7 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.new(tag_params)
     if @tag.save
-      redirect_to tags_path
+      redirect_to new_advertisement_path
     else
       render :new
     end

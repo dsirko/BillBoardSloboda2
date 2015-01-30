@@ -8,26 +8,48 @@
     <%= f.text_field :name %>
   </p>
 
-</br>
+<br/>
 
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
 
-</br>
+<br/>
 
   <p>
-    <%= f.association :tags, collecion: Tag.all, prompt: "Choose a Tag" %>
+    <%= f.label :choose_a_tag %><br>
+    <%= f.association :tags, collecion: Tag.all %>
   
   </p>  
   
-</br>
+
+
+
+<br/>
 
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+
+
+
+
+<br/>
+
+  <%=simple_form_for Tag.new do |x| %>
+    <p>
+      <%= x.label :or_make_new_tag %><br>
+      <%= x.text_field :name %>
+    </p>
+
+    <p>
+      <%= x.submit %>
+    </p>
+  <% end %>
+
+
 
 <br/>
 <%= link_to 'Back', advertisements_path %>
