@@ -1,6 +1,6 @@
 <p>
   <strong>Title:</strong>
-  <%= @advertisement.name %>
+  <h1><%= @advertisement.name %></h1>
 </p>
 
 <p>
@@ -8,11 +8,21 @@
   <%= @advertisement.text %>
 </p>
 
+<hr>
+
 <p>
   <strong>Owner:</strong>
   <%= @advertisement.owner.email %>
 </p>
  
+
+<h2>Tags</h2>
+
+<%= @advertisement.tags.map(&:name).join(', ') %>
+
+</br>
+
+</br>
 
 <h2>Feedbacks</h2>
 
@@ -33,11 +43,12 @@
   </p>
 <% end %>
 
+</br>
 
-  <h2>Add a feedback:</h2>
+</br>
+  <h3>Add a feedback:</h3>
   <%= form_for([@advertisement, @advertisement.feedbacks.build]) do |f| %>
     <p>
-      <%= f.label :text %><br>
       <%= f.text_area :text %>
     </p>
     </br>
