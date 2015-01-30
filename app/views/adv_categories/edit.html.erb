@@ -1,2 +1,32 @@
-<h1>AdvCategories#edit</h1>
-<p>Find me in app/views/adv_categories/edit.html.erb</p>
+<h1>Edit category</h1>
+
+<%= form_for :adv_category, url: adv_category_path(@adv_category), method: :patch do |f| %>
+
+    <% if @adv_category.errors.any? %>
+        <dif id="error_explanation">
+          <h2>
+            <%= pluralize(@adv_category.errors.count, "error") %> prohibited
+            this categoty from being saved:
+          </h2>
+          <ul>
+            <% @adv_category.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+          </dif>
+    <% end %>
+
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
+<br/>
+<%= link_to 'Back', adv_categories_path %>
+

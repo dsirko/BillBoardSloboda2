@@ -1,2 +1,12 @@
-<h1>AdvCategories#show</h1>
-<p>Find me in app/views/adv_categories/show.html.erb</p>
+<h1>Categories</h1>
+
+  <strong>Title:</strong>
+<h1><%= @adv_category.name %></h1>
+
+
+<%= link_to 'Back', adv_categories_path %>
+<%= link_to 'Edit', edit_adv_category_path(@adv_category) %>
+<%= link_to 'Destroy', adv_category_path(@adv_category),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+
