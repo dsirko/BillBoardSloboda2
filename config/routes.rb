@@ -10,7 +10,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :feedbacks
+  resources :advertisements do
+    resources :feedbacks
+  end
+
+  resources :tags
+  resources :adv_categories
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
