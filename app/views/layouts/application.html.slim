@@ -15,10 +15,10 @@ html
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        /= link_to 'BillBoard Sloboda', root_path, class: 'navbar-brand'
+        = link_to 'BillBoard Sloboda', root_path, class: 'navbar-brand'
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
-          /li class=(current_page?(controller: '/home', action: 'info') ? 'active' : '' )
+          li class=(current_page?(controller: '/home', action: 'info') ? 'active' : '' )
             =link_to 'About', '/info'
           li
             =link_to 'Tags', tags_path

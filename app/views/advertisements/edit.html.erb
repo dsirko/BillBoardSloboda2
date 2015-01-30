@@ -1,30 +1,26 @@
 <h1>Edit Advertisement</h1>
 
-<%= form_for :advertisement, url: advertisement_path(@advertisement), method: :patch do |f| %>
-
-  <% if @advertisement.errors.any? %>
-    <dif id="error_explanation">
-      <h2>
-        <%= pluralize(@advertisement.errors.count, "error") %> prohibited
-        this advertisement from being saved:
-      </h2>
-      <ul>
-        <% @advertisement.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </dif>
-  <% end %>
+<%= simple_form_for @advertisement do |f| %>
 
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
 
+<br/>
+
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
+
+<br/>
+
+  <p>
+    <%= f.association :tags, collecion: Tag.all, prompt: "Choose a Tag" %>
+  </p>  
+
+<br/>
 
   <p>
     <%= f.submit %>

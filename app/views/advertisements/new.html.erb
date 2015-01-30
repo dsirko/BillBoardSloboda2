@@ -1,6 +1,6 @@
 <h1>New Advertisement</h1>
 
-<%= form_for Advertisement.new do |f| %>
+<%= simple_form_for Advertisement.new do |f| %>
 
  
   <p>
@@ -8,10 +8,21 @@
     <%= f.text_field :name %>
   </p>
 
+</br>
+
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
+
+</br>
+
+  <p>
+    <%= f.association :tags, collecion: Tag.all, prompt: "Choose a Tag" %>
+  
+  </p>  
+  
+</br>
 
   <p>
     <%= f.submit %>
