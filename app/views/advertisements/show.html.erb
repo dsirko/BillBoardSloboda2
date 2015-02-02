@@ -42,28 +42,6 @@
     <% end %>
   </table>
 
-
-
--------- ИЛИ СТАРЫЙ ВАРИАНТ ОТОБРАЖЕНИЯ ФИДБЕКОВ------------------------------
-<% @advertisement.feedbacks.each do |feedback| %>
-  <p>
-    <strong>User:</strong>
-
-    <%= feedback.user.email if feedback.user %> 
-
-  </p>
-  <p>
-    <strong>Feedback:</strong>
-    <%= feedback.text %>
-  </p>
-  <p>
-    <%= link_to 'Delete Feedback', [feedback.advertisement, feedback],
-                 method:  :delete,
-                 data: { confirm: 'Are you sure?' } %>
-  </p>
-<% end %>
------------------------------------
-
 </br>
 
 </br>

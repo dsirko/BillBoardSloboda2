@@ -1,10 +1,9 @@
 h1 Tag
 b= @tag.name
-p= @tag.advertisements.map(&:name).join(', ')
 
+h3 Tags's advertisements
 
-# АНТОН, ПОРОБУЙ СДЕЛАТЬ ЭТОТ КОД ДЛЯ СЛИМА
-  - @tag.advertisements.each do |advertisement|
-    = link_to advertisement.name, advertisement_path(advertisement)
+- @tag.advertisements.each do |advertisement|
+  p= link_to advertisement.name, advertisement_path(advertisement)
 
 = link_to 'All tags', tags_path

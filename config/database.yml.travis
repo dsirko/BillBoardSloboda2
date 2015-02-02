@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: billboard_sloboda_test
+  username: postgres
