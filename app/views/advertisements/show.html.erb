@@ -1,3 +1,5 @@
+<h1><%= @advertisement.name %></h1>
+
 <p>
   <strong>Text:</strong>
   <%= @advertisement.text %>
@@ -11,7 +13,7 @@
 </p>
  
 
-<h2>Tags:</h2>
+<h3>Tags:</h3>
 
  <% @advertisement.tags.each do |tag| %>
       <%= link_to tag.name, tag_path(tag) %>
@@ -20,9 +22,7 @@
 
 <br><br>
 
-<h2>Feedbacks</h2>
-
-<-- НОВЫЙ ВАРИАНТ ОТОБРАЖЕНИЯ ФИДБЕКОВ   -->
+<h3>Feedbacks</h3>
 
 <table>
     <tr>
