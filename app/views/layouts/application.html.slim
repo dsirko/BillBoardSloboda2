@@ -44,5 +44,20 @@ html
       | p.alert.alert-danger
         =alert
 
-    .container
-      = yield
+    .row
+      .col-md-2
+        | Categories
+      .col-md-8
+        /.container
+        = yield
+      .col-md-2
+        - tag_cloud = []
+        - Tag.tag_cloud(Tag.all) do |tag, weigth|
+          - tag_cloud << { link: tag_path(tag), text: tag.name, weight: weigth }
+        - tag_cloud = tag_cloud.to_json
+        javascript:
+          var word_array = #{raw tag_cloud};
+          $(function() {
+          $("#example").jQCloud(word_array);
+          });
+        div id="example" style="width: 250px; height: 300px;"
