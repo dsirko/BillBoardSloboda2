@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'home#info'
+  root 'home#index'
 
   get 'info', :to => 'home#info'
 
