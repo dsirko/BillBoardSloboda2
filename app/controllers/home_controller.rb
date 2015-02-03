@@ -4,6 +4,5 @@ class HomeController < ApplicationController
   end
 
   def index
-    @tag_cloud = []
   end
 end
