@@ -3,7 +3,11 @@ class AdvertisementsController < ApplicationController
   before_filter :find_advertisement, only: [:show, :edit, :update, :destroy]
 
   def index
-    @advertisements = Advertisement.all
+    if params[:search]
+      @advertisements = Advertisement.search(params[:search])
+    else
+      @advertisements = Advertisement.all
+    end
   end
 
   def show
