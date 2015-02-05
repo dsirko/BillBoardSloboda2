@@ -3,16 +3,10 @@ class AdvertisementsController < ApplicationController
   before_filter :find_advertisement, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:search]
-      @advertisements = Advertisement.search(params[:search])
-    else
-      @advertisements = Advertisement.all
-    end
+      @advertisements = Advertisement.search_new(params[:search]).page(params[:page]).per_page(5) # add paginate
   end
 
   def show
-#    unless @advertisement
-#      render text: "Page not found", status: 404
   end
 
   def new
@@ -41,7 +35,7 @@ class AdvertisementsController < ApplicationController
 
   def destroy
     @advertisement.destroy
-    redirect_to advertisements_path  #action: "index"
+    redirect_to advertisements_path
   end
 
   private
