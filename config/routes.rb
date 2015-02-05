@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'info', :to => 'home#info'
 
   devise_for :users
+  resources :users, :only => [:show]
 
   resources :advertisements do
     resources :feedbacks

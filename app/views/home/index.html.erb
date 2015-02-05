@@ -7,7 +7,7 @@
   <div class="col-md-4">
     <h1>Business Name or Tagline</h1>
     <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-    <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
+    <!-- <a class="btn btn-primary btn-lg" href="#">Call to Action!</a> -->
   </div>
   <!-- /.col-md-4 -->
 </div>
@@ -26,7 +26,7 @@
 <!-- Content Row -->
 <div class="row">
   <% advertisements = Advertisement.last(3) %>
-  <% advertisements.each do |adv| %>
+  <% advertisements.reverse_each do |adv| %>
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
