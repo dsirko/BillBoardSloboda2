@@ -71,6 +71,10 @@ ActiveRecord::Schema.define(version: 20150130114548) do
     t.integer  "owner_id"
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+  end
+
   create_table "feedbacks", force: :cascade do |t|
     t.text     "text"
     t.integer  "rating"
