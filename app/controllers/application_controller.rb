@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_devise_permitted_parameters, if: :devise_controller?
 
-
-
   private
     def set_locale
       I18n.locale = params[:locale] if params[:locale].present?
@@ -17,7 +15,20 @@ class ApplicationController < ActionController::Base
     def default_url_options(options = {})
       {locale: I18n.locale}      
     end
-
+ 
+  def authenticate_admin_user!
+    authenticate_user!
+    unless current_user.admin?
+      flash[:alert] = "This area is restricted to administrators only."
+      redirect_to root_path
+    end
+  end
+   
+  def current_admin_user
+    return nil if user_signed_in? && !current_user.admin?
+    current_user
+  end
+  
   protected
 
   def configure_devise_permitted_parameters

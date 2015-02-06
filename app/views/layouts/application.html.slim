@@ -37,11 +37,12 @@ html
               = link_to current_user.email, current_user
             li
               = link_to t("sign_out"), destroy_user_session_path, method: :delete
+            - if (current_user.admin?)
+              li
+                = link_to 'Admin', '/admin'
           - else
             li
               = link_to t("sign_in"), new_user_session_path, method: :get
-          /li
-            = link_to 'Admin', '/admin'
     - if notice
       | p.alert.alert-success
         =notice
@@ -57,7 +58,7 @@ html
       .col-md-2
         - tag_cloud = []
         - Tag.tag_cloud(Tag.all) do |tag, weigth|
-          - tag_cloud << { link: tag_path(tag), text: tag.name, weight: weigth }
+          - tag_cloud << { link: tag_path(tag), text: tag.name, weight: weigth, delayedMode: true }
         - tag_cloud = tag_cloud.to_json
         javascript:
           var word_array = #{raw tag_cloud};
