@@ -20,4 +20,35 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home:
+    index:
+      title:   'BillBoard Sloboda'
+      text:    'It is BillBoard from Sloboda studio, where everyone can find something and lose something :)'
+      center_text: 'Recent advertisements:'
+  advertisements:
+    index:
+      title:   'Advertisements'
+      search:  'Search'
+      mane:   'Title'
+      text:    'Text'
+      owner:   'Owner'
+      show:    'Show'
+      edit:    'Edit'
+      destroy: 'Delite'
+      add_new_advertisement: 'Add new advertisement'
+    new:
+      title:   'New Advertisement'
+      name:    'Title'
+      text:    'Text'
+      tag:     'Choose a tag'
+      create_adv:          'Create new advertisement'
+      make_new_tag_before: 'Or make new tag before'
+      create_tag:          'Create tag'
+      back:    'Back'
+  layouts:
+    application:
+      about:   'About'
+      tags:    'Tags'
+      advertisements:      'Advertisements'
+      categories:   'Categories'
+
