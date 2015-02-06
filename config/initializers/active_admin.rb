@@ -9,7 +9,7 @@ ActiveAdmin.setup do |config|
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
-  # config.site_title_link = "/"
+  config.site_title_link = :root
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
@@ -98,7 +98,7 @@ ActiveAdmin.setup do |config|
   # will call the method to return the path.
   #
   # Default:
-  config.logout_link_path = :destroy_admin_user_session_path
+  config.logout_link_path = :destroy_user_session_path
 
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
@@ -230,4 +230,16 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
+
+  # For the entire application:
+ActiveAdmin.setup do |config|
+  config.comments = false
+end
+
+# For a namespace:
+ActiveAdmin.setup do |config|
+  config.namespace :admin do |admin|
+    admin.comments = false
+  end
+end
 end
