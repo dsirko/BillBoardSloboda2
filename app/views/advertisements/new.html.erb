@@ -1,24 +1,24 @@
-<h1>New Advertisement</h1>
+<h1><%= t '.title' %></h1>
 
 <%= simple_form_for Advertisement.new do |f| %>
 
  
   <p>
-    <%= f.label :name %><br>
+    <%= f.label (t '.name') %><br>
     <%= f.text_field :name %>
   </p>
 
 <br/>
 
   <p>
-    <%= f.label :text %><br>
+    <%= f.label (t '.text') %><br>
     <%= f.text_area :text %>
   </p>
 
 <br/>
 
-  <p>
-    <%= f.label :choose_a_tag %><br>
+  <p>  
+    <%= f.label (t '.tag') %><br>
     <%= f.association :tags, collecion: Tag.all %>
   
   </p>
@@ -31,33 +31,31 @@
 
     </p>
 
+<br/>
 
-
-    <br/>
+  </p>  
+  
+<br/>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit (t '.create_adv') %>
   </p>
 <% end %>
-
-
-
 
 <br/>
 
   <%=simple_form_for Tag.new do |x| %>
     <p>
-      <%= x.label :or_make_new_tag_before %><br>
+      <%= x.label (t '.make_new_tag_before') %><br>
       <%= x.text_field :name %>
     </p>
 
     <p>
-      <%= x.submit %>
+      <%= x.submit (t '.create_tag') %>
     </p>
   <% end %>
 
-
 <br/>
 
 <br/>
-<%= link_to 'Back', advertisements_path %>
+<%= link_to (t '.back'), advertisements_path %>

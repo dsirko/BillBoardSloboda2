@@ -279,6 +279,7 @@ DEPENDENCIES
   execjs
   factory_girl_rails
   faker
+  i18n
   jbuilder (~> 2.0)
   jqcloud-rails
   jquery-rails

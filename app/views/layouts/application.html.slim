@@ -18,15 +18,20 @@ html
         = link_to 'BillBoard Sloboda', root_path, class: 'navbar-brand'
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li class=(current_page?(controller: '/home', action: 'info') ? 'active' : '' )
-            =link_to 'About', '/info'
+          li
+            =link_to (t '.about'), info_path
           /li
-            =link_to 'Tags', tags_path
+            =link_to (t '.tags'), tags_path
           li
-            =link_to 'Advertisements', advertisements_path
-          li
-            =link_to 'Categories', adv_categories_path
+            =link_to (t '.advertisements'), advertisements_path
+          /li
+            =link_to (t '.categories'), adv_categories_path
         ul.nav.navbar-nav.navbar-right style="margin-right: 15px;"
+          li
+            = link_to_unless_current 'Русский', locale: "ru"
+          li
+            = link_to_unless_current 'English', locale: "en"
+          li  
           - if (user_signed_in?)
             li
               = link_to current_user.email, current_user
