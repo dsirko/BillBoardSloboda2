@@ -1,0 +1,52 @@
+<!-- Heading Row -->
+<div class="row">
+  <div class="col-md-8">
+    <img class="img-responsive img-rounded" src="http://placehold.it/900x350" alt="">
+  </div>
+  <!-- /.col-md-8 -->
+  <div class="col-md-4">
+    <h1><%= t '.title' %></h1>
+    <p><%= t '.text' %></p>
+    <!-- <a class="btn btn-primary btn-lg" href="#">Call to Action!</a> -->
+  </div>
+  <!-- /.col-md-4 -->
+</div>
+<!-- /.row -->
+<hr>
+<!-- Call to Action Well -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="well text-center">
+      <h2><%= t '.center_text' %></h2>
+    </div>
+  </div>
+<!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<!-- Content Row -->
+<div class="row">
+  <% advertisements = Advertisement.last(3) %>
+  <% advertisements.reverse_each do |adv| %>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><i class="fa fa-fw fa-gift"></i><%= adv.name %></h4>
+        </div>
+        <div class="panel-body">
+          <p><%= adv.text %></p>
+          <p><%= link_to "More info", advertisement_path(adv) %></p>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-md-4 -->
+  <% end %>
+</div>
+<!-- /.row -->
+<!-- Footer -->
+<footer>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Copyright &copy; Bill Board Sloboda</p>
+    </div>
+  </div>
+</footer>

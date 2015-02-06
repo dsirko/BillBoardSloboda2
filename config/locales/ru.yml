@@ -1,0 +1,32 @@
+ru:
+  home:
+    index:
+      title:   'BillBoard Sloboda'
+      text:    'Доска объявлений от Sloboda studio, где каждый может что-то найти и что-то потерять :)'
+      center_text: 'Последние объявления:'
+  advertisements:
+    index:
+      title:   'Объявления'
+      search:  'Поиск'
+      name:   'Заголовок'
+      text:    'Текст'
+      owner:   'Автор'
+      show:    'Просмотреть'
+      edit:    'Редактировать'
+      destroy: 'Удалить'
+      add_new_advertisement: 'Добавить новое объявление'
+    new:
+      title:   'Новое объявление'
+      name:    'Заголовок'
+      text:    'Текст объявления'
+      tag:     'Выберите метки'
+      create_adv:          'Создать новое объявление'
+      make_new_tag_before: 'Или предварительно создайте новую метку'
+      create_tag:          'Создать метку'
+      back:    'Назад к списку объявлений'
+  layouts:
+    application:
+      about:   'Про нас'
+      tags:    'Метки'
+      advertisements:      'Объявления'
+      categories:   'Категории'

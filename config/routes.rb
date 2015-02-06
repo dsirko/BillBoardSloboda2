@@ -1,27 +1,33 @@
 Rails.application.routes.draw do
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  scope ":locale", locale: /ru|en/ do
+  
+    devise_for :admin_users, ActiveAdmin::Devise.config
+    ActiveAdmin.routes(self)
+    # The priority is based upon order of creation: first created -> highest priority.
+    # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+    # You can have the root of your site routed with "root"
 
-  root 'home#index'
+    # root 'home#index'
 
-  get 'info', :to => 'home#info'
+    get 'info', :to => 'home#info'
 
-  devise_for :users
+    devise_for :users
+    resources :users, :only => [:show]
 
-  resources :advertisements do
-    resources :feedbacks
+    resources :advertisements do
+      resources :feedbacks
+    end
+
+    resources :tags
+    resources :adv_categories
+      #resources :parent_category_id
+
   end
 
-  resources :tags
-  resources :adv_categories
-    #resources :parent_category_id
-
-
+  root 'home#index'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
