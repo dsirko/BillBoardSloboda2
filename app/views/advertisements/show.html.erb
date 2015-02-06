@@ -11,7 +11,11 @@
   <strong>Owner:</strong>
   <%= @advertisement.owner.email %>
 </p>
- 
+
+<p>
+  <strong>Category:</strong>
+  <%= @advertisement.adv_category.name %>
+
 
 <h3>Tags:</h3>
 
@@ -61,3 +65,6 @@
 <br/>
 <%= link_to 'Back', advertisements_path %>
 <%= link_to 'Edit', edit_advertisement_path(@advertisement) %>
+
+
+

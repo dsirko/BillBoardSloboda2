@@ -24,7 +24,7 @@ html
             =link_to 'Tags', tags_path
           li
             =link_to 'Advertisements', advertisements_path
-          /li
+          li
             =link_to 'Categories', adv_categories_path
         ul.nav.navbar-nav.navbar-right style="margin-right: 15px;"
           - if (user_signed_in?)
@@ -48,6 +48,12 @@ html
     .row
       .col-md-2
         | Categories
+        - AdvCategory.all.each do |adv_category|
+          li
+            = link_to adv_category.name, adv_category_path(adv_category)
+        br
+        li
+          = link_to 'New category', new_adv_category_path
       .col-md-8
         = yield
       .col-md-2

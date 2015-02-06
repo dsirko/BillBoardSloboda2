@@ -21,12 +21,19 @@
     <%= f.label :choose_a_tag %><br>
     <%= f.association :tags, collecion: Tag.all %>
   
-  </p>  
-  
-
-
+  </p>
 
 <br/>
+
+    <p>
+      <%= f.label :choose_a_adv_category %><br>
+      <%= f.association :adv_category, collecion: AdvCategory.all %>
+
+    </p>
+
+
+
+    <br/>
 
   <p>
     <%= f.submit %>
@@ -50,6 +57,7 @@
   <% end %>
 
 
+<br/>
 
 <br/>
 <%= link_to 'Back', advertisements_path %>

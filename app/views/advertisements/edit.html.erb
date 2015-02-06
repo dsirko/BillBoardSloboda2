@@ -16,6 +16,11 @@
 
 <br/>
 
+    <p>
+      <%= f.association :adv_category, collecion: AdvCategory.all, prompt: "Choose a category" %>
+    </p>
+<br/>
+
   <p>
     <%= f.association :tags, collecion: Tag.all, prompt: "Choose a Tag" %>
   </p>  

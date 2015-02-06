@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206092410) do
+ActiveRecord::Schema.define(version: 20150206141717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +33,10 @@ ActiveRecord::Schema.define(version: 20150206092410) do
 
   create_table "adv_categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.integer  "parent_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "ancestry"
+    t.integer  "parent_id"
   end
 
   create_table "advertisement_tags", force: :cascade do |t|
@@ -48,9 +49,10 @@ ActiveRecord::Schema.define(version: 20150206092410) do
   create_table "advertisements", force: :cascade do |t|
     t.string   "name"
     t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "owner_id"
+    t.integer  "adv_category_id"
   end
 
   create_table "feedbacks", force: :cascade do |t|
