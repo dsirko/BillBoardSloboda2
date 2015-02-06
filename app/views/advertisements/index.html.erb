@@ -14,6 +14,7 @@
     <tr>
       <th><%= t '.name' %></th>
       <th><%= t '.text' %></th>
+      <th>Category</th>
       <th><%= t '.owner' %></th>
       <th colspan="3"></th>
     </tr>
@@ -22,6 +23,7 @@
       <tr>
         <td><%= advertisement.name %></td>
         <td><%= advertisement.text %></td>
+        <td><%= advertisement.adv_category %></td>
         <td><%= advertisement.owner.email %></td>
         <td><%= link_to (t '.show'), advertisement_path(advertisement) %></td>
         <td><%= link_to (t '.edit'), edit_advertisement_path(advertisement) %></td>

@@ -1,0 +1,9 @@
+h1 Category
+b= @adv_category.name
+
+h3 Advertisements
+
+- @adv_category.advertisements.each do |advertisement|
+  p= link_to advertisement.name, advertisement_path(advertisement)
+
+/= link_to 'All tags', tags_path
