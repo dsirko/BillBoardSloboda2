@@ -20,6 +20,19 @@
   <p>  
     <%= f.label (t '.tag') %><br>
     <%= f.association :tags, collecion: Tag.all %>
+  
+  </p>
+
+<br/>
+
+    <p>
+      <%= f.label :choose_a_adv_category %><br>
+      <%= f.association :adv_category, collecion: AdvCategory.all %>
+
+    </p>
+
+<br/>
+
   </p>  
   
 <br/>
@@ -41,6 +54,8 @@
       <%= x.submit (t '.create_tag') %>
     </p>
   <% end %>
+
+<br/>
 
 <br/>
 <%= link_to (t '.back'), advertisements_path %>
