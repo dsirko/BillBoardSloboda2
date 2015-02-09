@@ -51,10 +51,9 @@ ActiveRecord::Schema.define(version: 20150206141717) do
 
   create_table "adv_categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "ancestry"
-    t.integer  "parent_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "parent_category_id"
   end
 
   create_table "advertisement_tags", force: :cascade do |t|
