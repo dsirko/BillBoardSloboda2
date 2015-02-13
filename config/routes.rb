@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
 
-  scope ":locale", locale: /ru|en/ do
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
   
     #devise_for :admin_users, ActiveAdmin::Devise.config
-    ActiveAdmin.routes(self)
+
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
     # You can have the root of your site routed with "root"
@@ -24,6 +24,10 @@ Rails.application.routes.draw do
     resources :adv_categories
       #resources :parent_category_id
 
+  end
+
+  scope ":locale", defaults: { locale: "ru" } do
+    ActiveAdmin.routes(self)
   end
 
   root 'home#index'
