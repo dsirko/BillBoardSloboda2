@@ -232,14 +232,28 @@ ActiveAdmin.setup do |config|
   # config.filters = true
 
   # For the entire application:
-ActiveAdmin.setup do |config|
-  config.comments = false
-end
-
-# For a namespace:
-ActiveAdmin.setup do |config|
-  config.namespace :admin do |admin|
-    admin.comments = false
+  ActiveAdmin.setup do |config|
+    config.comments = false
   end
-end
+
+  # For a namespace:
+  ActiveAdmin.setup do |config|
+    config.namespace :admin do |admin|
+      admin.comments = false
+    end
+  end
+
+  config.namespace :admin do |admin|
+    admin.build_menu :utility_navigation do |menu|
+      menu.add :label => "Languages" do |lang|
+        lang.add :label => "English",:url => proc { url_for(:locale => 'en') }, id: 'i18n-en', :priority => 1
+        lang.add :label => "Русский",:url => proc { url_for(:locale => 'ru') }, id: 'i18n-es', :priority => 2
+      end
+      menu.add :label => proc { display_name current_active_admin_user },
+                :url => '#',
+                :id => 'current_user',
+                :if => proc { current_active_admin_user? }
+      admin.add_logout_button_to_menu menu
+    end
+  end
 end
