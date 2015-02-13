@@ -39,7 +39,7 @@ html
               = link_to t("sign_out"), destroy_user_session_path, method: :delete
             - if (current_user.admin?)
               li
-                = link_to 'Admin', '/admin'
+                = link_to 'Admin', admin_root_path
           - else
             li
               = link_to t("sign_in"), new_user_session_path, method: :get
