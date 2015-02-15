@@ -17,6 +17,12 @@
 
 <br/>
 
+  <p>
+    <%= f.file_field :photo %>
+  </p>
+
+<br/>
+
   <p>  
     <%= f.label (t '.tag') %><br>
     <%= f.association :tags, collecion: Tag.all %>
