@@ -16,6 +16,13 @@
 
 <br/>
 
+  <p>
+    <%= f.file_field :photo %>
+  </p>
+
+
+<br/>
+
     <p>
       <%= f.association :adv_category, collecion: AdvCategory.all, prompt: "Choose a category" %>
     </p>

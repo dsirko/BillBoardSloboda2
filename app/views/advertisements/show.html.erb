@@ -1,4 +1,7 @@
 <h1><%= @advertisement.name %></h1>
+<p>
+  <%= image_tag @advertisement.photo.url(:medium) %>
+</p>
 
 <p>
   <strong>Text:</strong>
