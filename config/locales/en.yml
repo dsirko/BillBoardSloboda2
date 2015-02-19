@@ -29,9 +29,11 @@ en:
     index:
       title:   'Advertisements'
       search:  'Search'
-      mane:   'Title'
+      mane:    'Title'
       text:    'Text'
       owner:   'Owner'
+      more:    'more >>'
+      category: 'Category'
       show:    'Show'
       edit:    'Edit'
       destroy: 'Delite'
