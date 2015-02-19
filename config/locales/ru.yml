@@ -17,6 +17,7 @@ ru:
       edit:    'Редактировать'
       destroy: 'Удалить'
       add_new_advertisement: 'Добавить новое объявление'
+      sign_in_for_add_new_advertisement: 'Войдите, чтобы добавить новое объявление'
     new:
       title:   'Новое объявление'
       name:    'Заголовок'

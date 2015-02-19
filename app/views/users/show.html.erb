@@ -13,7 +13,7 @@
     <div class="col-sm-3">
       <!--left col-->
       <ul class="list-group">
-        <li class="list-group-item text-muted" contenteditable="false"><%= link_to "Profile edit", edit_user_registration_path %></li>
+        <li class="list-group-item text-muted" contenteditable="false"><%= link_to "Your Profile edit", edit_user_registration_path %></li>
         <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span><%= current_user.created_at.strftime("%m/%d/%Y")  %></li>
         <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span><%= current_user.name%></li>
       </ul>
@@ -45,10 +45,10 @@
               <tr>
                 <td><%= advertisement.name %></td>
                 <td><%= link_to 'Show', advertisement_path(advertisement) %></td>
-                <td><%= link_to 'Edit', edit_advertisement_path(advertisement) %></td>
+                <td><%= link_to 'Edit', edit_advertisement_path(advertisement) if current_user == @user %></td>
                 <td><%= link_to 'Destroy', advertisement_path(advertisement),
                         method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
+                        data: { confirm: 'Are you sure?' } if current_user == @user %></td>
               </tr>
             <% end %>
           </table>
