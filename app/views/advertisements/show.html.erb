@@ -63,11 +63,9 @@
     </p>
   <% end %>
 
-
-
 <br/>
 <%= link_to 'Back', advertisements_path %>
-<%= link_to 'Edit', edit_advertisement_path(@advertisement) %>
-
-
-
+<%= link_to 'Edit', edit_advertisement_path(@advertisement) if current_user == @advertisement.owner %>
+<%= link_to 'Delete', advertisement_path(@advertisement),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } if current_user == @advertisement.owner %></td>
