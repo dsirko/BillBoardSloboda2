@@ -38,6 +38,7 @@ en:
       edit:    'Edit'
       destroy: 'Delite'
       add_new_advertisement: 'Add new advertisement'
+      sign_in_for_add_new_advertisement: 'Sign in for add new advertisement'
     new:
       title:   'New Advertisement'
       name:    'Title'
