@@ -3,7 +3,7 @@ class AdvertisementsController < ApplicationController
   before_filter :find_advertisement, only: [:show, :edit, :update, :destroy]
 
   def index
-      @advertisements = Advertisement.search_new(params[:search]).page(params[:page]).per_page(5) # add paginate
+      @advertisements = Advertisement.search_new(params[:search]).page(params[:page]).per_page(5).order('created_at DESC') # add paginate
   end
 
   def show
